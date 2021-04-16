@@ -166,6 +166,16 @@ mse = mean_squared_error(predictions, y)
 print(mse)
 
 
+##############################################################################
+# save the model to disk
+filename = 'finalized_model.sav'
+pickle.dump(lr, open(filename, 'wb'))
+
+
+###### load the model from disk
+#loaded_model = pickle.load(open(filename, 'rb'))
+#result = loaded_model.predict(X_test, Y_test)
+
 mse_list = []
 for step in range(test_sample):
     X_T = pd.read_csv('./Titles1/testing'+str(step)+'.csv')
